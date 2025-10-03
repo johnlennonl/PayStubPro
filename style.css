@@ -1,0 +1,471 @@
+/* ========================================================= */
+/* style.css - DISEÑO EMPRESARIAL Y MODERNO */
+/* ========================================================= */
+
+/* 1. Variables de Color y Tipografía */
+:root {
+    --color-primary: #004d99; /* Azul Corporativo Profundo (Darker Blue) */
+    --color-secondary: #007bff; /* Azul de Acento (Bootstrap Primary) */
+    --color-text-dark: #343a40;
+    --color-background-light: #f8f9fa; /* Gris muy claro */
+    --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--color-background-light); /* Fondo limpio y uniforme */
+    color: var(--color-text-dark);
+    line-height: 1.6;
+    background-image: radial-gradient(circle at 75% 26%, rgba(116, 116, 116,0.04) 0%, rgba(116, 116, 116,0.04) 50%,rgba(222, 222, 222,0.04) 50%, rgba(222, 222, 222,0.04) 100%),radial-gradient(circle at 62% 63%, rgba(60, 60, 60,0.04) 0%, rgba(60, 60, 60,0.04) 50%,rgba(152, 152, 152,0.04) 50%, rgba(152, 152, 152,0.04) 100%),radial-gradient(circle at 80% 64%, rgba(108, 108, 108,0.04) 0%, rgba(108, 108, 108,0.04) 50%,rgba(252, 252, 252,0.04) 50%, rgba(252, 252, 252,0.04) 100%),radial-gradient(circle at 97% 83%, rgba(184, 184, 184,0.04) 0%, rgba(184, 184, 184,0.04) 50%,rgba(137, 137, 137,0.04) 50%, rgba(137, 137, 137,0.04) 100%),radial-gradient(circle at 60% 7%, rgba(69, 69, 69,0.04) 0%, rgba(69, 69, 69,0.04) 50%,rgba(211, 211, 211,0.04) 50%, rgba(211, 211, 211,0.04) 100%),linear-gradient(90deg, rgb(212, 245, 239),rgba(191,191,242, 0.73));
+}
+
+/* 2. Estilo Global de Contenedor y Login */
+.container {
+    max-width: 1400px; /* Un poco más ancho para dashboards modernos */
+    padding: 0 15px;
+}
+
+/* ----------------------------------- */
+/* Estilos Específicos para el Login   */
+/* ----------------------------------- */
+.login-card {
+    max-width: 500px;
+    /* margin: 10vh auto; <- Ya no necesario si usas d-flex en el body */
+    padding: 2.5rem;
+    border : none;
+}
+
+/* 3. Componentes Base (Tarjetas, Formularios) */
+.card {
+    border: 1px solid #e9ecef; /* Borde sutil */
+    border-radius: 12px;
+    box-shadow: var(--shadow-subtle); /* Sombra profesional */
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-title.text-primary {
+    color: var(--color-primary) !important;
+    font-weight: 700;
+    font-size: 1.8rem;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e9ecef; /* Separador sutil */
+}
+
+/* 4. Inputs y Botones */
+.form-control, .form-select {
+    border-radius: 8px;
+    padding: 10px 15px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.form-control:focus {
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    font-weight: 600;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #003366; /* Un azul aún más oscuro al pasar el mouse */
+    border-color: #003366;
+    transform: translateY(-1px);
+}
+
+/* 5. Estilo de Encabezado (Dashboard) */
+.app-header {
+    background-color: white;
+    padding: 15px 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow-subtle);
+}
+
+.display-4 {
+    font-weight: 700;
+    color: var(--color-primary) !important; 
+    font-size: 2rem;
+}
+
+/* 6. Navegación (Tabs) */
+.nav-tabs .nav-link {
+    color: var(--color-text-dark);
+    font-weight: 500;
+    border: none;
+    border-bottom: 3px solid transparent;
+    padding: 10px 20px;
+    transition: all 0.3s;
+}
+
+.nav-tabs .nav-link.active {
+    color: var(--color-primary);
+    background-color: transparent;
+    border-bottom-color: var(--color-primary); /* Indicador azul fuerte */
+    font-weight: 600;
+}
+
+/* 7. Estilo de Tablas (Datos Financieros) */
+.table {
+    cursor: pointer;
+    border-collapse: separate;
+    border-spacing: 0 8px; /* Espaciado entre filas */
+}
+
+.table thead th {
+    background-color: #f1f1f1; /* Fondo más claro y moderno para thead */
+    color: var(--color-text-dark);
+    font-weight: 600;
+    border-bottom: 1px solid #dee2e6;
+}
+
+/* Estilo para las filas de clientes seleccionables */
+.client-row {
+    background-color: white;
+    transition: background-color 0.2s, box-shadow 0.3s;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.client-row:hover {
+    background-color: #f5f5f5;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Montos de Dinero y Totales */
+td.text-danger { 
+    font-weight: 500; 
+}
+
+.table-info {
+    background-color: #e0f7fa !important; /* Azul claro para totales */
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.table-success {
+    background-color: #e6ffed !important; /* Verde muy claro para Gross Pay */
+    font-weight: 700;
+    color: #1e7e34;
+}
+
+/* Animación de Resultados */
+#resultsSection {
+    margin-top: 40px;
+    animation: slideInUp 0.6s ease-out; 
+}
+
+@keyframes slideInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.logotipoLogin{
+    width: 120px;
+    height: auto;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+li {
+    cursor: pointer;
+}
+
+
+/* style.css - 4. Inputs y Botones (Asegúrate que se vea así) */
+
+/* style.css - Botones Pequeños dentro de la Tabla */
+.table .btn-sm {
+    padding: 5px 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-radius: 6px; /* Aún más pequeños para el formato de tabla */
+}
+
+/* Botón Seleccionar */
+.table .btn-info {
+    background-color: var(--color-secondary); /* Azul de Acento */
+    border-color: var(--color-secondary);
+    color: white;
+}
+
+.table .btn-info:hover {
+    
+    border-color: #0056b3;
+}
+
+/* Botón Eliminar (Minimalista en la tabla) */
+.table .btn-danger {
+    background-color: #dc3545; /* Rojo sólido en la tabla para acción clara */
+    border-color: #dc3545;
+    color: white;
+}
+
+.table .btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+
+.btn-outline-primary {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 10px 20px;
+    transition: all 0.3s;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+    box-shadow: 0 4px 8px rgba(0, 77, 153, 0.2); /* Sombra azul al pasar el mouse */
+}
+
+
+/* style.css - (Asegúrate que estas reglas existen) */
+
+/* Estilo del Contenedor de Encabezado (Paso 1 del estilo empresarial) */
+.app-header {
+    background-color: white;
+    padding: 15px 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow-subtle);
+}
+
+/* ----------------------------------- */
+/* Botón "Nuevo Cliente" (Outline) */
+/* ----------------------------------- */
+.btn-outline-primary {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 10px 20px; /* Tamaño más grande para botones de header */
+    transition: all 0.3s;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+    box-shadow: 0 4px 8px rgba(0, 77, 153, 0.2); 
+}
+
+
+/* ----------------------------------- */
+/* Botón "Salir" (Sólido Rojo) */
+/* ----------------------------------- */
+.btn-danger {
+    background-color: #dc3545; /* Rojo sólido para indicar acción final */
+    border-color: #dc3545;
+    color: white;
+    font-weight: 500;
+    border-radius: 8px;
+    padding: 10px 20px; /* Mismo tamaño que el botón de Nuevo Cliente */
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #c82333;
+    transform: translateY(-1px);
+}
+
+
+
+
+/* ========================================================= */
+/* MEDIA QUERIES PARA DISPOSITIVOS MÓVILES (MOBILE FIRST) */
+/* ========================================================= */
+
+
+/* ----------------------------------- */
+/* 1. MÓVILES PEQUEÑOS Y VERTICAL (max-width: 575.98px) */
+/* ----------------------------------- */
+@media (max-width: 575.98px) {
+    
+    /* Cuerpo y Contenedor */
+    body {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    /* Encabezado y Botones */
+    .app-header {
+        /* Fuerza a que el logo y los botones se apilen verticalmente */
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .app-header img {
+        height: 40px !important; /* Logo más pequeño */
+        margin-bottom: 10px;
+    }
+
+    .app-header > div {
+        /* Contenedor de botones para ocupar todo el ancho */
+        width: 100%; 
+        display: flex;
+        justify-content: space-between; /* Espacia los botones */
+    }
+
+    /* Botones de Header (Nuevo Cliente, Salir) */
+    .app-header .btn {
+        width: 48%; /* Hace que los dos botones ocupen casi la mitad cada uno */
+        padding: 8px 10px;
+        font-size: 0.85rem;
+    }
+    
+    /* Ocultar texto del botón Salir para ahorrar espacio si es necesario */
+    .app-header .btn-danger i.fa-sign-out-alt {
+         margin-right: 0 !important;
+    }
+    
+    .app-header .btn-danger:not(:hover) {
+         /* Oculta la etiqueta "Salir" en modo mobile, solo deja el icono */
+         font-size: 0; 
+    }
+    .app-header .btn-danger:hover {
+         /* Muestra la etiqueta al tocar/pasar el mouse */
+         font-size: 0.85rem; 
+    }
+
+    /* Login Card */
+    .login-card {
+        padding: 1.5rem;
+    }
+    
+    /* Pestañas de Navegación */
+    .nav-tabs .nav-link {
+        padding: 10px 5px;
+        font-size: 0.9rem;
+    }
+    
+    /* Tablas de Clientes y Resultados */
+    .table-responsive {
+        /* Aseguramos que la tabla se pueda desplazar horizontalmente */
+        overflow-x: auto;
+    }
+    
+    /* Botones de acción en la tabla más pequeños */
+    .table .btn-sm {
+        padding: 3px 6px;
+        font-size: 0.7rem;
+    }
+}
+
+
+/* ----------------------------------- */
+/* 2. TABLETAS Y PANTALLAS PEQUEÑAS (max-width: 767.98px) */
+/* ----------------------------------- */
+@media (max-width: 767.98px) {
+    
+    /* Margen entre el logo y los botones más pequeño */
+    .app-header img {
+        height: 45px !important;
+    }
+
+    /* Tamaño de Botones estándar */
+    .app-header .btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+    
+    /* Títulos principales más pequeños */
+    h2.card-title {
+        font-size: 1.5rem;
+    }
+
+    h4 {
+        font-size: 1.1rem;
+    }
+}
+
+
+/* --------------- LOGOUT BTN -------------------- */ 
+
+/* From Uiverse.io by vinodjangid07 */ 
+.BtnLogout {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition-duration: .3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+  background-color: rgb(255, 65, 65);
+}
+
+/* plus sign */
+.sign {
+  width: 100%;
+  transition-duration: .3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign svg {
+  width: 17px;
+}
+
+.sign svg path {
+  fill: white;
+}
+/* text */
+.text {
+  position: absolute;
+  right: 0%;
+  width: 0%;
+  opacity: 0;
+  color: white;
+  font-size: 1.2em;
+  font-weight: 600;
+  transition-duration: .3s;
+}
+/* hover effect on button width */
+.BtnLogout:hover {
+  width: 125px;
+  border-radius: 40px;
+  transition-duration: .3s;
+}
+
+.BtnLogout:hover .sign {
+  width: 30%;
+  transition-duration: .3s;
+  padding-left: 20px;
+}
+/* hover effect button's text */
+.BtnLogout:hover .text {
+  opacity: 1;
+  width: 70%;
+  transition-duration: .3s;
+  padding-right: 10px;
+}
+/* button click effect*/
+.BtnLogout:active {
+  transform: translate(2px ,2px);
+}
