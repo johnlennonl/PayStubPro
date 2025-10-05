@@ -128,6 +128,22 @@ app.get('/api/download-paystub', async (req, res) => {
 });
 // =========================================================
 
+
+
+// =========================================================
+// GESTIÓN DE ERRORES 404 (AGREGAR AL FINAL DEL ARCHIVO)
+// =========================================================
+app.use((req, res, next) => {
+    // Si ninguna de las rutas anteriores manejó la solicitud,
+    // significa que la ruta no existe, devolvemos un 404
+    if (req.originalUrl.startsWith('/api/')) {
+        res.status(404).json({ error: 'Endpoint de API no encontrado. Revisa la URL.' });
+    } else {
+        // Podrías devolver aquí tu página 404 estática si tuvieras una
+        res.status(404).send('Error 404: Recurso no encontrado.');
+    }
+});
+
 // Iniciar el servidor
 app.listen(port, () => {
     console.log(`Servidor Express escuchando en http://localhost:${port}`);
