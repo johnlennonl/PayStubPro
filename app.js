@@ -804,35 +804,49 @@ document.addEventListener('DOMContentLoaded', () => {
 // (Coloca esta función en alguna parte LÓGICA después de showPaystubDetails)
 // (Coloca esta función en alguna parte LÓGICA después de showPaystubDetails)
 
+// app.js
+
 // --------------------------------------------------------------------------
 // FUNCIÓN PARA DESCARGAR EL PAYSTUB
 // --------------------------------------------------------------------------
 const downloadPaystub = () => {
-    if (!currentPaystubId || !currentClientId) { 
-        console.error("IDs de cliente/paystub no disponibles para la descarga.");
-        alert("Primero selecciona un paystub para poder iniciar la descarga.");
-        return;
-    }
+    // 1. Verificar el estado global del paystub y cliente
+    if (!currentPaystubId || !currentClientId) { 
+        console.error("IDs de cliente/paystub no disponibles para la descarga.");
+        // Usar SweetAlert si está disponible, sino alert
+        if (typeof Swal !== 'undefined') {
+            Swal.fire({
+                icon: 'warning',
+                title: 'No hay Paystub',
+                text: 'Primero debes seleccionar un paystub para poder iniciar la descarga.'
+            });
+        } else {
+            alert("Primero selecciona un paystub para poder iniciar la descarga.");
+        }
+        return;
+    }
 
-    // 🔑 ¡CLAVE! USAR LA URL DE RENDER CORRECTA
-    // app.js
-
-const RENDER_BASE_URL = 'https://paystub-pro-app-backend.onrender.com'; // ✅ CORRECTO
-    
-    // Construir la URL completa
-    const downloadUrl = `${RENDER_BASE_URL}/api/download-paystub?clientId=${currentClientId}&paystubId=${currentPaystubId}`;
-
-    // Abrir la URL en una nueva pestaña/ventana
-    window.open(downloadUrl, '_blank');
+    // 2. 🔑 ¡CLAVE! USAR LA URL DE RENDER CORRECTA DEL WEB SERVICE
+    // Esto asegura que la solicitud vaya a tu servidor Node.js (backend) y no al Static Site (frontend)
+    const RENDER_BASE_URL = 'https://paystub-pro-app-backend.onrender.com'; // ✅ ¡El dominio correcto!
     
-    // Feedback visual para el usuario
+    // 3. Construir la URL completa con los parámetros de la base de datos
+    const downloadUrl = `${RENDER_BASE_URL}/api/download-paystub?clientId=${currentClientId}&paystubId=${currentPaystubId}`;
+
+    // 4. Abrir la URL en una nueva pestaña/ventana (esto inicia la descarga en el backend)
+    window.open(downloadUrl, '_blank');
+    
+    // 5. Feedback visual para el usuario (opcional, pero mejora la UX)
     const btn = document.getElementById('downloadPaystubBtn');
     if (btn) {
+        const originalHTML = btn.innerHTML;
         btn.disabled = true;
         btn.innerHTML = '<i class="bi bi-hourglass-split me-1"></i> Generando...';
+        
+        // El PDF tarda unos segundos en generarse y descargarse
         setTimeout(() => {
             btn.disabled = false;
-            btn.innerHTML = '<i class="bi bi-download me-1"></i> Descargar';
+            btn.innerHTML = originalHTML; // Vuelve al texto original ('Descargar PDF')
         }, 3000); 
     }
 };
