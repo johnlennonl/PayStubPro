@@ -815,7 +815,9 @@ const downloadPaystub = () => {
     }
 
     // 🔑 ¡CLAVE! USAR LA URL DE RENDER CORRECTA
-    const RENDER_BASE_URL = 'https://paystub-pro-app.onrender.com';
+    // app.js
+
+const RENDER_BASE_URL = 'https://paystub-pro-app-backend.onrender.com'; // ✅ CORRECTO
     
     // Construir la URL completa
     const downloadUrl = `${RENDER_BASE_URL}/api/download-paystub?clientId=${currentClientId}&paystubId=${currentPaystubId}`;
