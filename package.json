@@ -1,0 +1,26 @@
+{
+  "name": "paystubpro",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnlennonl/PayStubPro.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johnlennonl/PayStubPro/issues"
+  },
+  "homepage": "https://github.com/johnlennonl/PayStubPro#readme",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "firebase-admin": "^13.5.0",
+    "pdfkit": "^0.17.2"
+  }
+}

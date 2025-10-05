@@ -1,4 +1,6 @@
 /* ========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 /* style.css - DISEÑO EMPRESARIAL Y MODERNO */
 /* ========================================================= */
 
@@ -9,16 +11,17 @@
     --color-text-dark: #343a40;
     --color-background-light: #f8f9fa; /* Gris muy claro */
     --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.08);
+    
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: var(--color-background-light); /* Fondo limpio y uniforme */
-    color: var(--color-text-dark);
-    line-height: 1.6;
-    background-image: radial-gradient(circle at 75% 26%, rgba(116, 116, 116,0.04) 0%, rgba(116, 116, 116,0.04) 50%,rgba(222, 222, 222,0.04) 50%, rgba(222, 222, 222,0.04) 100%),radial-gradient(circle at 62% 63%, rgba(60, 60, 60,0.04) 0%, rgba(60, 60, 60,0.04) 50%,rgba(152, 152, 152,0.04) 50%, rgba(152, 152, 152,0.04) 100%),radial-gradient(circle at 80% 64%, rgba(108, 108, 108,0.04) 0%, rgba(108, 108, 108,0.04) 50%,rgba(252, 252, 252,0.04) 50%, rgba(252, 252, 252,0.04) 100%),radial-gradient(circle at 97% 83%, rgba(184, 184, 184,0.04) 0%, rgba(184, 184, 184,0.04) 50%,rgba(137, 137, 137,0.04) 50%, rgba(137, 137, 137,0.04) 100%),radial-gradient(circle at 60% 7%, rgba(69, 69, 69,0.04) 0%, rgba(69, 69, 69,0.04) 50%,rgba(211, 211, 211,0.04) 50%, rgba(211, 211, 211,0.04) 100%),linear-gradient(90deg, rgb(212, 245, 239),rgba(191,191,242, 0.73));
+    background: #8e9eab;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #eef2f3, #8e9eab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+/* Fondo limpio y uniforme */
+    font-family: 'Alan Sans', sans-serif; /* Fuente moderna y profesional */
+    color: var(--color-text-dark); /* Texto oscuro para alto contraste */
 }
-
 /* 2. Estilo Global de Contenedor y Login */
 .container {
     max-width: 1400px; /* Un poco más ancho para dashboards modernos */
@@ -82,155 +85,95 @@ body {
 }
 
 /* 5. Estilo de Encabezado (Dashboard) */
-.app-header {
-    background-color: white;
-    padding: 15px 30px;
-    border-radius: 10px;
-    margin-bottom: 30px;
-    box-shadow: var(--shadow-subtle);
-}
+/* 5. Estilo de Encabezado (Dashboard) */
 
-.display-4 {
-    font-weight: 700;
-    color: var(--color-primary) !important; 
-    font-size: 2rem;
-}
-
-/* 6. Navegación (Tabs) */
-.nav-tabs .nav-link {
-    color: var(--color-text-dark);
-    font-weight: 500;
-    border: none;
-    border-bottom: 3px solid transparent;
-    padding: 10px 20px;
-    transition: all 0.3s;
-}
-
-.nav-tabs .nav-link.active {
-    color: var(--color-primary);
-    background-color: transparent;
-    border-bottom-color: var(--color-primary); /* Indicador azul fuerte */
-    font-weight: 600;
-}
-
-/* 7. Estilo de Tablas (Datos Financieros) */
-.table {
-    cursor: pointer;
-    border-collapse: separate;
-    border-spacing: 0 8px; /* Espaciado entre filas */
-}
-
-.table thead th {
-    background-color: #f1f1f1; /* Fondo más claro y moderno para thead */
-    color: var(--color-text-dark);
-    font-weight: 600;
-    border-bottom: 1px solid #dee2e6;
-}
-
-/* Estilo para las filas de clientes seleccionables */
-.client-row {
-    background-color: white;
-    transition: background-color 0.2s, box-shadow 0.3s;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-.client-row:hover {
-    background-color: #f5f5f5;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Montos de Dinero y Totales */
-td.text-danger { 
-    font-weight: 500; 
-}
-
-.table-info {
-    background-color: #e0f7fa !important; /* Azul claro para totales */
-    font-weight: 700;
-    color: var(--color-primary);
-}
-
-.table-success {
-    background-color: #e6ffed !important; /* Verde muy claro para Gross Pay */
-    font-weight: 700;
-    color: #1e7e34;
-}
-
-/* Animación de Resultados */
-#resultsSection {
-    margin-top: 40px;
-    animation: slideInUp 0.6s ease-out; 
-}
-
-@keyframes slideInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.logotipoLogin{
-    width: 120px;
-    height: auto;
-    margin-bottom: 15px;
-    margin-top: 15px;
-}
-
-li {
-    cursor: pointer;
-}
-
-
-/* style.css - 4. Inputs y Botones (Asegúrate que se vea así) */
-
-/* style.css - Botones Pequeños dentro de la Tabla */
-.table .btn-sm {
-    padding: 5px 12px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    border-radius: 6px; /* Aún más pequeños para el formato de tabla */
-}
-
-/* Botón Seleccionar */
-.table .btn-info {
-    background-color: var(--color-secondary); /* Azul de Acento */
-    border-color: var(--color-secondary);
-    color: white;
-}
-
-.table .btn-info:hover {
+/* Clase principal para la barra superior (Logo + Botones + Tabs) */
+.app-top-bar {
+    color: white; /* Texto claro por defecto */
+    border-radius: 15px; /* Bordes más redondeados */
     
-    border-color: #0056b3;
+    margin-bottom: 25px; /* Menos margen, se ve más integrado */
+    position: relative; /* Para el posicionamiento de las pestañas */
+    overflow: hidden; /* Asegura que los bordes redondeados se vean bien */
 }
 
-/* Botón Eliminar (Minimalista en la tabla) */
-.table .btn-danger {
-    background-color: #dc3545; /* Rojo sólido en la tabla para acción clara */
-    border-color: #dc3545;
-    color: white;
+/* Ajuste del logo para pantallas grandes */
+.app-top-bar .app-logo {
+    height: 80px !important;
 }
 
-.table .btn-danger:hover {
-    background-color: #c82333;
-    border-color: #bd2130;
-}
-
-
-.btn-outline-primary {
-    color: var(--color-primary);
-    border-color: var(--color-primary);
+/* Botón Nuevo Cliente (Outline de color claro sobre fondo oscuro) */
+.btn-outline-light-blue {
+    color: rgba(254, 255, 253, 0.904);
+    border-color: rgba(255, 255, 255, 0.7);
     font-weight: 600;
     border-radius: 8px;
-    padding: 10px 20px;
+    padding: 8px 15px;
     transition: all 0.3s;
+    background-color: var(--color-secondary);
 }
 
-.btn-outline-primary:hover {
-    background-color: var(--color-primary);
+.btn-outline-light-blue:hover {
+    background-color: rgba(250, 250, 250, 0.89); /* Efecto hover suave */
+    color: var(--color-secondary);
+    border-color: white;
+}
+/* Tabs modernas */
+/* Tabs modernas: Ahora integradas en el fondo azul */
+.modern-tabs {
+    /* Mueve la UL un poco hacia abajo en el contenedor azul */
+    border: none !important;
+    padding: 0 15px 15px 15px !important;
+}
+
+.modern-tabs .nav-link {
+    font-weight: 600;
+    color: rgba(8, 8, 8, 0.7); /* Texto de pestaña inactiva más claro */
+    background-color: transparent; /* Fondo transparente para mostrar el degradado */
+    border: none;
+    border-radius: 0; /* Quitamos el borde superior para que se fusione con el header */
+    padding: 10px 18px;
+    transition: all 0.25s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.modern-tabs .nav-link i {
+    font-size: 1.1rem;
+    color: #2e53cf;
+    transition: transform 0.25s ease;
+}
+
+.modern-tabs .nav-link:hover {
+    color: #ffc107;
+    background-color: rgba(255, 255, 255, 0.1); /* Efecto hover sutil */
+    border-color: transparent;
+}
+
+/* PESTAÑA ACTIVA */
+.modern-tabs .nav-link.active {
     color: white;
-    border-color: var(--color-primary);
-    box-shadow: 0 4px 8px rgba(0, 77, 153, 0.2); /* Sombra azul al pasar el mouse */
+    background-color: transparent;
+    /* La línea de acento inferior en la pestaña activa */
+    border-bottom: 3px solid #ffc107; /* Un color de acento amarillo/naranja que contrasta con el azul */
+    box-shadow: none;
+    /* Necesitamos anular el margen del Bootstrap */
+    margin-bottom: 0;
 }
 
+.modern-tabs .nav-link.active i {
+    transform: scale(1.1);
+    color: #ffc107;
+}
+
+.modern-tabs .nav-link:disabled {
+    color: rgba(255, 255, 255, 0.4);
+    background-color: transparent;
+    border: none;
+    cursor: not-allowed;
+}
 
 /* style.css - (Asegúrate que estas reglas existen) */
 
@@ -243,53 +186,27 @@ li {
     box-shadow: var(--shadow-subtle);
 }
 
-/* ----------------------------------- */
-/* Botón "Nuevo Cliente" (Outline) */
-/* ----------------------------------- */
-.btn-outline-primary {
-    color: var(--color-primary);
-    border-color: var(--color-primary);
-    font-weight: 600;
-    border-radius: 8px;
-    padding: 10px 20px; /* Tamaño más grande para botones de header */
-    transition: all 0.3s;
+/* ... dentro del bloque @media (max-width: 575.98px) { ... */
+
+/* Ajuste del Header Móvil */
+.app-top-bar {
+    padding: 10px 0 0 0; /* Menos padding vertical para ahorrar espacio */
+    border-radius: 0; /* Quitamos bordes redondeados en móvil para full-width */
 }
 
-.btn-outline-primary:hover {
-    background-color: var(--color-primary);
-    color: white;
-    border-color: var(--color-primary);
-    box-shadow: 0 4px 8px rgba(0, 77, 153, 0.2); 
+/* Ocultar el texto "Nuevo Cliente" en pantallas muy pequeñas */
+.app-top-bar .btn-outline-light-blue .d-none.d-sm-inline {
+    display: none !important;
 }
 
-
-/* ----------------------------------- */
-/* Botón "Salir" (Sólido Rojo) */
-/* ----------------------------------- */
-.btn-danger {
-    background-color: #dc3545; /* Rojo sólido para indicar acción final */
-    border-color: #dc3545;
-    color: white;
-    font-weight: 500;
-    border-radius: 8px;
-    padding: 10px 20px; /* Mismo tamaño que el botón de Nuevo Cliente */
-    transition: all 0.2s ease-in-out;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+/* Ajustar el botón de nuevo cliente para que solo se vea el icono */
+.app-top-bar .btn-outline-light-blue {
+    padding: 8px; /* Hazlo cuadrado */
+    width: 45px; /* Mismo ancho que el botón de Salir */
+    height: 45px; /* Mismo alto que el botón de Salir */
+    border-radius: 50%; /* Lo hacemos redondo */
+    border: none;
 }
-
-.btn-danger:hover {
-    background-color: #c82333;
-    border-color: #c82333;
-    transform: translateY(-1px);
-}
-
-
-
-
-/* ========================================================= */
-/* MEDIA QUERIES PARA DISPOSITIVOS MÓVILES (MOBILE FIRST) */
-/* ========================================================= */
-
 
 /* ----------------------------------- */
 /* 1. MÓVILES PEQUEÑOS Y VERTICAL (max-width: 575.98px) */
@@ -316,7 +233,7 @@ li {
     }
 
     .app-header img {
-        height: 40px !important; /* Logo más pequeño */
+        height: 80px !important; /* Logo más pequeño */
         margin-bottom: 10px;
     }
 
@@ -368,10 +285,18 @@ li {
     /* Botones de acción en la tabla más pequeños */
     .table .btn-sm {
         padding: 3px 6px;
-        font-size: 0.7rem;
+        font-size: 0.8rem;
     }
 }
 
+
+.info{
+    font-size: 1.2rem;
+    color: rgb(65, 65, 65);
+    font-weight: 400;
+
+    
+}
 
 /* ----------------------------------- */
 /* 2. TABLETAS Y PANTALLAS PEQUEÑAS (max-width: 767.98px) */
@@ -380,7 +305,7 @@ li {
     
     /* Margen entre el logo y los botones más pequeño */
     .app-header img {
-        height: 45px !important;
+        height: 65px !important;
     }
 
     /* Tamaño de Botones estándar */
@@ -397,7 +322,278 @@ li {
     h4 {
         font-size: 1.1rem;
     }
+    
 }
+
+
+/* =================================================== */
+/* PANEL DE CLIENTES Y SIMULADOR — ESTILO MODERNO PRO */
+/* =================================================== */
+
+/* ------------------ Tarjetas ------------------ */
+.card.shadow-lg {
+    border-radius: 14px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    background: #fff;
+}
+.card.shadow-lg:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* ------------------ Tabs ------------------ */
+.nav-tabs .nav-link {
+    font-weight: 600;
+    color: #3f51b5;
+    border: none;
+    transition: all 0.3s ease;
+}
+.nav-tabs .nav-link.active {
+    background: linear-gradient(90deg, #3f51b5, #5c6bc0);
+    color: #fff !important;
+    border-radius: 8px;
+}
+.nav-tabs .nav-link:hover {
+    background-color: #f1f2ff;
+}
+
+/* ------------------ Encabezado de tabla (Desktop) ------------------ */
+.table thead th {
+    /* Usamos tu color primario con un degradado sutil */
+    background: white; 
+    color: var(--color-primary); 
+    border-top: none;
+    border-bottom: 3px solid #004d99;
+    
+    /* Tipografía */
+    font-weight: 700;
+    font-size: 0.95rem; 
+    letter-spacing: 0.2px; 
+    text-transform: uppercase;
+    
+    /* Espaciado y Alineación */
+    padding: 0.9rem 1rem;
+    vertical-align: middle;
+    
+    /* Sombra más marcada */
+    cursor: pointer;
+}
+
+/* Filas rayadas y hover */
+.table-hover tbody tr:hover {
+    background-color: #f0f7ff;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+   background-color: #fcfdfe;
+}
+
+/* ------------------ Celdas ------------------ */
+.table tbody td {
+    vertical-align: middle;
+    padding: 0.9rem;
+    font-weight: 500; /* Aseguramos que el contenido tenga buen peso */
+    font-size: 1rem;
+}
+
+/* ------------------ Botón Historial (.btnCloud) ------------------ */
+.btnCloud {
+    background-color: transparent;
+    position: relative;
+    /* Usamos tu color principal o uno neutro más claro */
+    fill: #9b9999;
+    border: 1px solid #9b9999;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    font-weight: 500;
+    
+    display: flex; /* Para centrar texto e icono */
+    align-items: center;
+    justify-content: center;
+    gap: 5px; 
+}
+
+.btnCloud:hover {
+    background-color: #f1f2ff;
+    fill: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    transform: translateY(-1px);
+}
+
+/* ------------------ Acciones y Botones Genéricos ------------------ */
+/* Tus estilos para .btn, .btn-primary, etc., se mantienen. */
+.table td:last-child, 
+.table td:nth-last-child(2) {
+    white-space: nowrap;
+}
+/* ------------------ Botones ------------------ */
+.btn {
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.25s ease;
+    width: 100%;
+}
+.btn-primary {
+    background: linear-gradient(90deg, #3f51b5, #5c6bc0);
+    border: none;
+}
+.btn-primary:hover {
+    background: linear-gradient(90deg, #3949ab, #303f9f);
+    transform: translateY(-1px);
+}
+.btn-success {
+    background: linear-gradient(90deg, #43a047, #66bb6a);
+    border: none;
+}
+.btn-success:hover {
+    background: linear-gradient(90deg, #388e3c, #43a047);
+    transform: translateY(-1px);
+}
+
+/* ------------------ Formularios ------------------ */
+.form-label {
+    font-weight: 600;
+    color: #3f51b5;
+}
+.form-control, .form-select {
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    transition: all 0.2s ease;
+}
+.form-control:focus, .form-select:focus {
+    border-color: #3f51b5;
+    box-shadow: 0 0 0 0.2rem rgba(63, 81, 181, 0.15);
+}
+
+/* ------------------ Resultados ------------------ */
+#resultsSection .card {
+    border-left: 5px solid #3f51b5;
+    background-color: #fafbff;
+}
+/* ======================================================= */
+/* RESPONSIVE — Tarjetas de Cliente PREMIUM (<768px) */
+/* ======================================================= */
+@media (max-width: 767.98px) {
+    /* 1. ESTRUCTURA BASE DE LA TARJETA */
+    .table thead { display: none; }
+    .table tbody, .table tr { display: block; width: 100%; }
+    .card .table-responsive { padding: 0 0.5rem; }
+
+    .table tr {
+        margin-bottom: 1.5rem; 
+        border: 1px solid #e9ecef;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        background-color: #ffffff;
+        overflow: hidden;
+    }
+    .table-hover tbody tr:hover { 
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+        background-color: #ffffff;
+    }
+
+    /* 2. ESTILO DE CELDAS CON ETIQUETAS */
+    .table td {
+        display: flex; /* Ahora usamos flex para alinear etiqueta/valor */
+        justify-content: space-between; 
+        align-items: center;
+        text-align: right !important; /* El valor a la derecha */
+        position: relative;
+        padding: 0.75rem 1rem; 
+        border-bottom: 1px solid #f0f0f0; 
+        font-size: 1.1rem;
+    }
+    .table td::before {
+        content: attr(data-label);
+        position: static; /* Usar static permite que flexbox lo posicione */
+        width: 45%;
+        text-align: left;
+        font-weight: 600;
+        color: var(--color-primary); 
+        font-size: 1rem;
+        text-transform: none; 
+    }
+    .table tr > td:last-child { border-bottom: none; }
+
+    /* 3. JERARQUÍA VISUAL (Resaltamos el nombre y YTD) */
+    
+    /* Nombre (Celda 1: Encabezado de Tarjeta) */
+    .table td:nth-child(1) {
+        background: linear-gradient(90deg, #f0f7ff, #ffffff); /* Fondo suave */
+        font-weight: 700;
+        font-size: 1.3rem; /* Más grande */
+        color: #333;
+        border-bottom: 2px solid var(--color-primary); 
+        padding-bottom: 0.8rem;
+    }
+    .table td:nth-child(1)::before {
+        content: none; /* Quitamos la etiqueta 'Nombre' */
+    }
+
+    /* Gross YTD (Celda 3: Valor monetario) */
+    .table td:nth-child(3) {
+        font-size: 1.4rem;
+        font-weight: 800;
+        color: #28a745; /* Verde para destacar el dinero */
+        background-color: #f7fff7; 
+        border-top: 1px solid #e9ecef;
+    }
+    .table td:nth-child(3)::before {
+        color: #28a745; 
+        font-weight: 700;
+    }
+    
+    /* 4. BOTONES DE ACCIÓN EN MÓVIL (Pie de página) */
+
+    /* Contenedor de Acciones/Historial */
+    .table td:last-child, 
+    .table td:nth-last-child(2) {
+        display: flex; 
+        justify-content: center; 
+        gap: 10px; /* Espacio entre los botones */
+        padding: 1rem 1rem;
+        background-color: #f8f9fa; /* Fondo gris claro para el pie */
+        border-bottom: none;
+        border-top: 1px solid #e9ecef; 
+    }
+    
+    /* Ocultar etiquetas en Acciones */
+    .table td:last-child::before,
+    .table td:nth-last-child(2)::before {
+        content: none;
+    }
+    
+    /* Botones ahora son flexibles y ocupan la mitad (48%) */
+    .table td:last-child .btn,
+    .table td:nth-last-child(2) .btn,
+    .table td:nth-last-child(2) .btnCloud
+    {
+        width: auto; 
+        flex-grow: 1; 
+        max-width: 48%; 
+        font-size: 0.95rem;
+    }
+    
+    /* Ajuste para el botón de historial, si está solo */
+    .table td:nth-last-child(2) {
+        justify-content: center; 
+        background-color: #ffffff; /* Historial puede ir en fondo blanco */
+        border-bottom: 1px solid #f0f0f0; 
+        border-top: none;
+    }
+    .table td:nth-last-child(2) .btnCloud {
+        max-width: 150px; 
+    }
+}
+
+
 
 
 /* --------------- LOGOUT BTN -------------------- */ 
@@ -429,7 +625,7 @@ li {
 }
 
 .sign svg {
-  width: 17px;
+  width: 15px;
 }
 
 .sign svg path {
@@ -442,7 +638,7 @@ li {
   width: 0%;
   opacity: 0;
   color: white;
-  font-size: 1.2em;
+  font-size: 0.9em;
   font-weight: 600;
   transition-duration: .3s;
 }
@@ -468,4 +664,103 @@ li {
 /* button click effect*/
 .BtnLogout:active {
   transform: translate(2px ,2px);
+}
+
+
+
+
+
+.typeCheck{
+    font-size: 1.5rem;
+    color: #003366;
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 1.8rem;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e9ecef;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+
+}
+
+
+.logotipoLogin{
+    width: 130px;
+}
+
+
+/* ======================================================= */
+/* RESPONSIVE — Detalle de Paystub (Tablas internas) */
+/* ======================================================= */
+@media (max-width: 767.98px) {
+    
+    /* 1. Estilos Base de Tarjetas */
+    .paystub-view .table-responsive {
+        /* Permite que las tablas internas se vean como tarjetas */
+        padding: 0 0.5rem; 
+        margin-bottom: 1.5rem;
+    }
+
+    .paystub-view .table thead { display: none; }
+    .paystub-view .table tbody, 
+    .paystub-view .table tr { display: block; width: 100%; }
+    
+    .paystub-view .table tr {
+        margin-bottom: 10px;
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+    }
+
+    /* 2. Estilo de Celdas (Etiqueta + Valor) */
+    .paystub-view .table td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: right !important;
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid #f0f0f0;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+    
+    /* Etiqueta (Content del data-label) */
+    .paystub-view .table td::before {
+        content: attr(data-label);
+        position: static;
+        width: 50%;
+        text-align: left;
+        font-weight: 600;
+        color: #6c757d; /* Gris para la etiqueta */
+        font-size: 0.95rem;
+        text-transform: none;
+    }
+    .paystub-view .table tr > td:last-child {
+        border-bottom: none;
+    }
+
+    /* 3. Estilos de Resaltado para Totales */
+
+    /* Fila de Total de Impuestos (Monto YTD) */
+    #taxDetailsTable .table-info td:nth-last-child(1),
+    #taxDetailsTable .table-info td:nth-last-child(1)::before {
+        font-weight: 700;
+        color: var(--color-primary);
+        font-size: 1.1rem;
+    }
+    
+    /* Fila de Gross Pay YTD TOTAL */
+    #earningsTable .table-success td:nth-last-child(1),
+    #earningsTable .table-success td:nth-last-child(1)::before {
+        font-weight: 700;
+        color: #28a745; /* Verde de éxito */
+        font-size: 1.1rem;
+    }
+    /* El concepto (td:nth-child(1)) debe ser texto normal */
+    #earningsTable .table-success td:nth-child(1),
+    #earningsTable .table-success td:nth-child(1)::before {
+        font-weight: 700;
+        color: #333;
+    }
 }
